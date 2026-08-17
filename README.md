@@ -63,13 +63,22 @@ Bashpython3 rexfox.py -u [https://example.com](https://example.com) --gen-count 
 -u--urlTarget website URLRequired
 
 -w--wordlistCustom wordlist file pathAuto-generated
+ 
   --gen-countSize of auto-generated list5000
+ 
 -t--threadsNumber of concurrent threads20
-         --timeoutRequest timeout in seconds6
+
+ --timeoutRequest timeout in seconds6
+
 -o--outputSave results to fileDisabled
+
 -c--crawlAuto-discover hidden pathsEnabled
-           --no-crawlDisable path auto-discoveryDisabled
-           --vuln-scanEnable passive headers/files checkEnabled
+  
+  --no-crawlDisable path auto-discoveryDisabled
+           
+  --vuln-scanEnable passive headers/files checkEnabled
+           
 -q--quietShow report only after completionDisabled
+
 ⚠️ Disclaimer
 This tool is created for authorized testing and educational purposes only. Unauthorized scanning of targets is strictly prohibited.
