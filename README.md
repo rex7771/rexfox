@@ -1,4 +1,4 @@
-# REX Fox
+# Rex Fox
 
 REX Fox is a VAPT reconnaissance tool for authorized testing.
 
