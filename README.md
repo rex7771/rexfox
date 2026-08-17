@@ -12,14 +12,18 @@ REX Fox is an advanced VAPT reconnaissance, admin/login panel finder, and passiv
 * **High-Speed Threading:** Supports concurrent multi-threading for fast discovery.
 
 ---
+## 📥 Installation & Setup
 
-## 📥 Installation & Update Guide
+**One-Line Installation & Shortcut Setup:**
+```bash
+cd ~ && rm -rf rexfox && git clone [https://github.com/rex7771/rexfox.git](https://github.com/rex7771/rexfox.git) && cd rexfox && chmod +x rexfox.py && sudo ln -sf "$(pwd)/rexfox.py" /usr/local/bin/rexfox
 
-**First Time Installation:**
 ```
 bash
 git clone [https://github.com/rex7771/rexfox.git](https://github.com/rex7771/rexfox.git)
 cd rexfox
+
+
 
 bash
 chmod +x rexfox.py
