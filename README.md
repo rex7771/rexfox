@@ -1,9 +1,56 @@
-🦊 REX FoxREX Fox is an advanced VAPT reconnaissance, admin/login panel finder, and passive vulnerability assessment tool designed for penetration testers and security researchers.⚡ Key FeaturesSmart Crawling & Auto-Discovery: Extract hidden endpoints automatically from robots.txt, sitemap.xml, HTML source, and external JavaScript files.Internal Wordlist Generator: Generates up to thousands of dynamic paths on the fly if no custom wordlist is provided.Passive Vulnerability Assessment: Automatically checks missing security headers, exposed sensitive files, and directory listings.High Performance: Concurrent multi-threading support for rapid enumeration.📥 InstallationClone the repository and navigate into the directory:Bashgit clone https://github.com/rex7771/rexfox.git
-cd rexfox
-(Ensure Python 3 and required dependencies are installed before running.)🚀 Deep Brute-Force & Usage Guide1. Basic Scan (Default Wordlist Generator & Crawling Enabled)Bashpython3 rexfox.py -u https://example.com
-2. Deep Brute-Force (Large Custom Wordlist + High Threads)Bashpython3 rexfox.py -u https://example.com -w wordlists/admin_heavy.txt -t 50 --timeout 10
-3. Deep Auto-Generated Brute-Force (10,000+ Generated Paths)Bashpython3 rexfox.py -u https://example.com --gen-count 10000 -t 40 -o results/target_scan.txt
-4. Full Deep Reconnaissance (Crawling + Passive Vuln Scan + Save Wordlist)Bashpython3 rexfox.py -u https://example.com -c --vuln-scan --save-wordlist results/generated_paths.txt -o results/full_report.txt
-⚙️ Command-Line OptionsFlagLong ArgumentDescriptionDefault-u--urlTarget base URLRequired-w--wordlistPath to custom wordlistAuto-generated--gen-countAuto-generated wordlist size5000-t--threadsConcurrent threads count20--timeoutHTTP request timeout (sec)6-o--outputSave scan report to fileDisabled-c--crawlAuto-discover paths (robots, sitemap, JS)Enabled--no-crawlDisable path auto-discoveryDisabled--vuln-scanPassive vuln scan (headers, exposed files)Enabled-q--quietOutput results only after scan completesDisabled
+# 🦊 REX Fox
 
-⚠️ Legal DisclaimerUsage of REX Fox for scanning targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+REX Fox is an advanced VAPT reconnaissance, admin/login panel finder, and passive vulnerability assessment tool designed for penetration testers and security researchers.
+
+---
+
+## ⚡ Key Features
+
+* **Smart Crawling:** Automatically extracts endpoints from `robots.txt`, `sitemap.xml`, HTML source, and JS files.
+* **Dynamic Wordlist Generation:** Automatically creates dynamic admin path combinations if no wordlist is provided.
+* **Passive Vulnerability Checks:** Scans for sensitive files, directory listings, and misconfigured headers.
+* **High-Speed Threading:** Supports concurrent multi-threading for fast discovery.
+
+---
+
+## 📥 Installation & Update Guide
+
+**First Time Installation:**
+```
+bash
+git clone [https://github.com/rex7771/rexfox.git](https://github.com/rex7771/rexfox.git)
+cd rexfox
+
+bash
+chmod +x rexfox.py
+
+How to Update to the Latest Version:
+
+Bash
+cd ~/rexfox
+git pull
+
+🚀 Usage Examples
+1. Basic Admin Panel Scan
+
+Bashpython3 rexfox.py -u [https://example.com](https://example.com)
+
+2. Deep Scan with Custom Wordlist & High Threads
+Bashpython3 rexfox.py -u [https://example.com](https://example.com) -w wordlists/admin.txt -t 50
+3. Large Auto-Generated Path Search (10,000 Paths)
+Bashpython3 rexfox.py -u [https://example.com](https://example.com) --gen-count 10000 -o results/found.txt
+
+
+⚙️ Command OptionsFlagLong ArgumentDescriptionDefault
+-u--urlTarget website URLRequired
+-w--wordlistCustom wordlist file pathAuto-generated
+            --gen-countSize of auto-generated list5000
+-t--threadsNumber of concurrent threads20
+         --timeoutRequest timeout in seconds6
+-o--outputSave results to fileDisabled
+-c--crawlAuto-discover hidden pathsEnabled
+           --no-crawlDisable path auto-discoveryDisabled
+           --vuln-scanEnable passive headers/files checkEnabled
+-q--quietShow report only after completionDisabled
+⚠️ Disclaimer
+This tool is created for authorized testing and educational purposes only. Unauthorized scanning of targets is strictly prohibited.
