@@ -14,13 +14,15 @@ REX Fox is an advanced VAPT reconnaissance, admin/login panel finder, and passiv
 ---
 ## 📥 Installation & Setup
 
-**One-Line Installation & Shortcut Setup:**
+**Fresh Installation / Re-installation (Deletes old & installs clean):**
 ```bash
 cd ~ && rm -rf rexfox && git clone [https://github.com/rex7771/rexfox.git](https://github.com/rex7771/rexfox.git) && cd rexfox && chmod +x rexfox.py && sudo ln -sf "$(pwd)/rexfox.py" /usr/local/bin/rexfox
 
+Bash
+cd ~/rexfox && git pull
 ```
 bash
-git clone [https://github.com/rex7771/rexfox.git](https://github.com/rex7771/rexfox.git)
+sudo git clone https://github.com/rex7771/rexfox.git
 cd rexfox
 
 
