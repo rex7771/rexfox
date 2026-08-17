@@ -8,7 +8,7 @@ VAPT recon tool — everything in ONE file, no separate scripts needed:
                  path wordlist internally, OR use your own with -w.
   2. CRAWL     — auto-discovers extra paths from robots.txt,
                  sitemap.xml, page source (view-source), and JS files,
-                 so renamed panels (e.g. "/light") get caught even if
+                 so renamed panels (e.g. "/*") get caught even if
                  they're not in the wordlist, as long as the site
                  links to them somewhere.
   3. SCAN      — brute-forces every path, follows redirects, and
@@ -36,7 +36,7 @@ Other options:
 
 Wordlist file format (if you use -w): one path per line, e.g.
     admin
-    light
+    *
     admin/login
     portal2024
 
@@ -160,7 +160,7 @@ def generate_wordlist(target_count=5000):
 
 # ---------------------------------------------------------------------
 # Content-based classifiers — this is what lets the tool catch
-# renamed panels like "/light/" that don't look like admin paths.
+# renamed panels like "/*/" that don't look like admin paths.
 #
 # IMPORTANT: a real login/admin panel means there's an actual LOGIN
 # FORM on the page (a password field). Just seeing the word
@@ -233,8 +233,8 @@ def load_wordlist(path):
 # AUTO-DISCOVERY (crawling): finds paths NOT in your wordlist by
 # reading what the target site itself references — robots.txt,
 # sitemap.xml, page source (view-source), and linked JS files.
-# This is how a renamed panel like "/light" gets caught even if
-# you never typed "light" into a wordlist: if the site links to it
+# This is how a renamed panel like "/*" gets caught even if
+# you never typed "*" into a wordlist: if the site links to it
 # anywhere, the crawler picks it up.
 #
 # What this can NOT do: guess a path that is never referenced
