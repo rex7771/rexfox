@@ -1,15 +1,9 @@
-# Rex Fox
+🦊 REX FoxREX Fox is an advanced VAPT reconnaissance, admin/login panel finder, and passive vulnerability assessment tool designed for penetration testers and security researchers.⚡ Key FeaturesSmart Crawling & Auto-Discovery: Extract hidden endpoints automatically from robots.txt, sitemap.xml, HTML source, and external JavaScript files.Internal Wordlist Generator: Generates up to thousands of dynamic paths on the fly if no custom wordlist is provided.Passive Vulnerability Assessment: Automatically checks missing security headers, exposed sensitive files, and directory listings.High Performance: Concurrent multi-threading support for rapid enumeration.📥 InstallationClone the repository and navigate into the directory:Bashgit clone https://github.com/rex7771/rexfox.git
+cd rexfox
+(Ensure Python 3 and required dependencies are installed before running.)🚀 Deep Brute-Force & Usage Guide1. Basic Scan (Default Wordlist Generator & Crawling Enabled)Bashpython3 rexfox.py -u https://example.com
+2. Deep Brute-Force (Large Custom Wordlist + High Threads)Bashpython3 rexfox.py -u https://example.com -w wordlists/admin_heavy.txt -t 50 --timeout 10
+3. Deep Auto-Generated Brute-Force (10,000+ Generated Paths)Bashpython3 rexfox.py -u https://example.com --gen-count 10000 -t 40 -o results/target_scan.txt
+4. Full Deep Reconnaissance (Crawling + Passive Vuln Scan + Save Wordlist)Bashpython3 rexfox.py -u https://example.com -c --vuln-scan --save-wordlist results/generated_paths.txt -o results/full_report.txt
+⚙️ Command-Line OptionsFlagLong ArgumentDescriptionDefault-u--urlTarget base URLRequired-w--wordlistPath to custom wordlistAuto-generated--gen-countAuto-generated wordlist size5000-t--threadsConcurrent threads count20--timeoutHTTP request timeout (sec)6-o--outputSave scan report to fileDisabled-c--crawlAuto-discover paths (robots, sitemap, JS)Enabled--no-crawlDisable path auto-discoveryDisabled--vuln-scanPassive vuln scan (headers, exposed files)Enabled-q--quietOutput results only after scan completesDisabled
 
-REX Fox is a VAPT reconnaissance tool for authorized testing.
-
-## Components
-
-- rexfox.py - main scanner
-- wordlist_gen.py - wordlist generator
-- wordlists/ - wordlists
-- results/ - scan results
-
-## Usage
-
-python3 rexfox.py --help
-python3 wordlist_gen.py --help
+⚠️ Legal DisclaimerUsage of REX Fox for scanning targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
