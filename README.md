@@ -53,10 +53,13 @@ git pull
 Bashpython3 rexfox.py -u [https://example.com](https://example.com)
 
 2. Deep Scan with Custom Wordlist & High Threads
-Bashpython3 rexfox.py -u [https://example.com](https://example.com) -w wordlists/admin.txt -t 20
-3. Large Auto-Generated Path Search (10,000 Paths)
-Bashpython3 rexfox.py -u [https://example.com](https://example.com) --gen-count 10000 -o results/found.txt
-
+```Bash
+rexfox -u https://example.com -w your-list -t 20
+```
+4. Large Auto-Generated Path Search (10,000 Paths)
+```Bash
+rexfox -u https://example.com --gen-count 10000 -o results/found.txt
+```
 
 ⚙️ Command OptionsFlagLong ArgumentDescriptionDefault
 
@@ -80,5 +83,6 @@ Bashpython3 rexfox.py -u [https://example.com](https://example.com) --gen-count 
            
 -q--quietShow report only after completionDisabled
 
-⚠️ Disclaimer
-This tool is created for authorized testing and educational purposes only. Unauthorized scanning of targets is strictly prohibited.
+##⚠️ Disclaimer
+This tool is created for authorized testing and educational purposes only.
+Unauthorized scanning of targets is strictly prohibited.
